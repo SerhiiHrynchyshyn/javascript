@@ -13,16 +13,15 @@ if(friends.length >= 3){
 //2 - Маємо 3 числа і між ним  нам потрібно знайти те що посередині.
 //  Знайти, яке з них є середнім (більше одного, але менше за інше). Перевірити, чи знаходиться перше число між двома іншими.
 
-/*
-let a = 1
+/*let a = 1
 let b = 2
 let c = 3
-if(a > b && a < c){
-    console.log('a (середнє число)')
-}else if (b > a && b < c ){
-    console.log('b (середнє число)')
-}else if (c > b && c < a ){
-    console.log('c (середнє число)')
+if(a > b && a > c){
+    console.log('a більше (середнє число)')
+}else if (b > a && b > c ){
+    console.log('b більше (середнє число)')
+}else if (c > b && c > a ){
+    console.log('c більше (середнє число)')
 }else {
     console.log('числа рівні')
 }*/
@@ -46,7 +45,7 @@ console.log(result === a + b < 4 ? 'Мало' : 'Багато');*/
 /*let num = +prompt('число');
 if(num === 0){
     console.log('нуль');
-}else if(num >= -100 && num < 0){
+}else if(num < 0){
     console.log('число негативне');
 }else if (num > 0){
     console.log('число позитивне');
