@@ -54,21 +54,27 @@ document.write('</ul>');*/
         info: 'Ма́ргарет Эвелин «Мэ́гги» Си́мпсон (англ. Margaret Evelyn “Maggie” Simpson) — персонаж мультсериала «Симпсоны». Впервые появилась на телевидении в шоу Трейси Ульман, в короткометражке Good Night (англ.)русск. 19 апреля 1987 года. Мэгги была придумана и разработана карикатуристом Мэттом Грейнингом, пока он ждал встречи с Джеймсом Л. Бруксом. Названа в честь младшей сестры Грейнинга. После появления в шоу Трейси Ульман, через три года семья Симпсонов получила собственный сериал на телеканале Fox, дебют произошёл 17 декабря 1989 года.',
         photo: 'https://upload.wikimedia.org/wikipedia/ru/9/9d/Maggie_Simpson.png'
     },
-];*/
+];
 <!--template 2.1-->
 // document.write(`<div> <p>${simpsons[0].name}</p> <p>${simpsons[0].surname}</p> <p>${simpsons[0].info}</p><img src="${simpsons[0].photo}" alt=""></div>`);
 <!--template 2.2-->
 //варік 1
-/*document.write('<div>');
+/!*document.write('<div>');
 for (let simpson of simpsons) {
 	document.write(`<h2 style="text-transform: uppercase">${simpson.name} ${simpson.surname}. <span style="text-transform: none">age is -</span> ${simpson.age}</h2> <p style="width: 500px">${simpson.info}</p> <img style="width: 100px" src="${simpson.photo}" alt=""/>`)
 }
-document.write('/<div>');*/
+document.write('/<div>');*!/
 
 //варік 2
-/*for (let i = 0; i < simpsons.length; i++) {
+/!*for (let i = 0; i < simpsons.length; i++) {
     document.write(`<h2 style="text-transform: uppercase">${simpsons[i].name} ${simpsons[i].surname}. <span style="text-transform: none">age is -</span> ${simpsons[i].age}</h2> <p style="width: 500px">${simpsons[i].info}</p> <img style="width: 100px" src="${simpsons[i].photo}" alt=""/>`)
-}*/
+}*!/
+<!--template 2.3-->
+/!*document.write('<div>');
+for (let simpson of simpsons) {
+	document.write(`<div><h2 style="text-transform: uppercase">${simpson.name} ${simpson.surname}. <span style="text-transform: none">age is -</span> ${simpson.age}</h2> <p style="width: 500px">${simpson.info}</p> <img style="width: 100px" src="${simpson.photo}" alt=""/></div>`)
+}
+document.write('/<div>');*!/
 
 //3
 // Використовуючи данні з масиву, за допомоги document.write та циклу
@@ -77,7 +83,7 @@ document.write('/<div>');*/
 
 <!--        template 3.1-->
 
-/*let products = [
+let products = [
     {
         title: 'milk',
         price: 22,
@@ -99,7 +105,8 @@ document.write('/<div>');*/
         image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
     },
 ];
-
+document.write('<div>');
 for(let product of products){
-document.write(`<div><div class="product-card"><h3 style="text-transform: uppercase">${product.title}. <span style="text-transform: none">Price -</span> ${product.price}</h3><img src="${product.image}" class="product-image" style="width: 250px;" alt=""/></div></div>`)
-}*/
+document.write(`<div class="product-card"><h3 style="text-transform: uppercase">${product.title}. <span style="text-transform: none">Price -</span> ${product.price}</h3><img src="${product.image}" class="product-image" style="width: 250px;" alt=""/></div>`)
+}
+document.write('/<div>');*/
