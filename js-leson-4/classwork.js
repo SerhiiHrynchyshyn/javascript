@@ -77,22 +77,22 @@ getNum(7,8,5)*/
 // console.log(getArr(arr))
 //-----------------------------------------------------------------------
 // 7- створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math використовувати заборонено);
-function getNum(){
-    let bigNum = arguments[0];
-    let smallNum = arguments[0];
-    for (let i = 0; i< arguments.length;i++){
-        if(arguments[i] > bigNum){
-            bigNum = arguments[i];
-        }
-        if(arguments[i] < smallNum){
-            smallNum = arguments[i];
-        }
-    }
-    console.log(bigNum, 'я більше число')
-    return smallNum;
-}
-let small = getNum(50,40,30)
-console.log(small, 'я менше число')
+// function getNum(){
+//     let bigNum = arguments[0];
+//     let smallNum = arguments[0];
+//     for (let i = 0; i< arguments.length;i++){
+//         if(arguments[i] > bigNum){
+//             bigNum = arguments[i];
+//         }
+//         if(arguments[i] < smallNum){
+//             smallNum = arguments[i];
+//         }
+//     }
+//     console.log(bigNum, 'я більше число')
+//     return smallNum;
+// }
+// let small = getNum(50,40,30)
+// console.log(small, 'я менше число')
 //-----------------------------------------------------------------------
 // 8- створити функцію яка заповнює масив рандомними числами
 // let arr = [];
