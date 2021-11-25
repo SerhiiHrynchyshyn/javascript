@@ -130,18 +130,18 @@
 // console.log(arr);
 // - Функція приймає масив та робить з нього новий масив в зворотньому порядку. [1,2,3] -> [3, 2, 1].
 
-let arr = [1, 2, 3, 4, 5, 6, 7];
-
-let getArr =(arrElement) => {
-    let newArr = [];
-    for (let i = 0; i < arrElement.length; i++) {
-        newArr.push(arrElement[i])
-    }
-    newArr.reverse()
-    console.log(newArr)
-}
-console.log(arr)
-getArr(arr)
+// let arr = [1, 2, 3, 4, 5, 6, 7];
+//
+// let getArr =(arrElement) => {
+//     let newArr = [];
+//     for (let i = 0; i < arrElement.length; i++) {
+//         newArr.push(arrElement[i])
+//     }
+//     newArr.reverse()
+//     console.log(newArr)
+// }
+// console.log(arr)
+// getArr(arr)
 
 
 
