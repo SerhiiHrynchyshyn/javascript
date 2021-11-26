@@ -154,13 +154,18 @@
 
 // let cutString = (str, n) => {
 //     let arr = [];
-//     for (; str.length;) {
+//     while (str.length) {
 //         arr.push(str.substring(0, n));
 //         str = str.slice(n);
 //     }
 //     console.log(arr);
-// };
+// }
 // cutString('наслаждение', 3);
+
+
+
+
+
 
 
 
