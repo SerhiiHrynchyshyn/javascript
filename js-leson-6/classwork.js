@@ -152,15 +152,15 @@
 // document.writeln(cutString('наслаждение',3)) // [нас,лаж,ден,ие]
 
 
-let cutString = (str, n) => {
-    let arr = [];
-    while (str.length) {
-        arr.push(str.substring(0, n));
-        str = str.slice(n);
-    }
-    console.log(arr);
-}
-cutString('наслаждение', 3);
+// let cutString = (str, n) => {
+//     let arr = [];
+//     while (str.length) {
+//         arr.push(str.substring(0, n));
+//         str = str.slice(n);
+//     }
+//     console.log(arr);
+// }
+// cutString('наслаждение', 3);
 
 
 
