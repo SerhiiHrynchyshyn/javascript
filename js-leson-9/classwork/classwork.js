@@ -175,3 +175,5 @@
 //     document.body.appendChild(div)
 // }
 // getArrObj(coursesArray);
+
+
