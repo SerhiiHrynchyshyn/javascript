@@ -233,24 +233,30 @@ let usersList = [
     }
 ];
 
-// Створити під кожен елемент окремий блок. В цьому блоці, під кожну властивість, та властивості внутрішніх об'єктів створити свої окремі блок.
-// let userListFunction = (array) => {
-//     for (let arrayElement of array) {
-//         let minDiv = document.createElement('div');
-//         for (let arrayKey in arrayElement) {
-//             let div = document.createElement('div');
-//             if (arrayElement[arrayKey] !== arrayElement.address) {
-//                 div.innerText = arrayElement[arrayKey];
-//             }
-//             minDiv.appendChild(div);
-//
-//         }
-//         document.body.appendChild(minDiv);
-//     }
-// }
-// userListFunction(usersList);
+// Створити під кожен елемент окремий блок. В цьому блоці,
+// під кожну властивість, та властивості внутрішніх об'єктів створити свої
+// окремі блок.
+let userListFunction = (array) => {
+    for (let arrayElement of array) {
+        let minDiv = document.createElement('div');
+        for (let arrayKey in arrayElement) {
+            let div = document.createElement('div');
+            if (typeof arrayElement[arrayKey] === "object") {
+                for (let Key in arrayElement[arrayKey]) {
+                    let divChild = document.createElement('div');
+                    divChild.innerText = arrayElement[arrayKey][Key];
+                    console.log(divChild)
 
-
-
+                    // div.appendChild(divChild)
+                    // console.log(arrayElement[arrayKey][Key])
+                }
+            }
+            div.innerText = arrayElement[arrayKey];
+            minDiv.appendChild(div)
+        }
+        document.body.appendChild(minDiv);
+    }
+}
+userListFunction(usersList);
 
 
