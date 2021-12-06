@@ -236,27 +236,55 @@ let usersList = [
 // Створити під кожен елемент окремий блок. В цьому блоці,
 // під кожну властивість, та властивості внутрішніх об'єктів створити свої
 // окремі блок.
-let userListFunction = (array) => {
-    for (let arrayElement of array) {
-        let minDiv = document.createElement('div');
-        for (let arrayKey in arrayElement) {
-            let div = document.createElement('div');
-            if (typeof arrayElement[arrayKey] === "object") {
-                for (let Key in arrayElement[arrayKey]) {
-                    let divChild = document.createElement('div');
-                    divChild.innerText = arrayElement[arrayKey][Key];
-                    console.log(divChild)
 
-                    // div.appendChild(divChild)
-                    // console.log(arrayElement[arrayKey][Key])
-                }
+let userListFunction = (array) => {
+    for (const arrayElement of array) {
+        let div = document.createElement('div');
+        let id = document.createElement('div');
+        id.append(arrayElement.id);
+        let name = document.createElement('div');
+        name.append(arrayElement.name);
+        let username = document.createElement('div');
+        username.append(arrayElement.username);
+        let email = document.createElement('div');
+        email.append(arrayElement.email);
+        let newAddress = document.createElement('div');
+        for (const key in arrayElement.address) {
+            if (typeof arrayElement.address[key] === 'object') {
+                let geo = document.createElement('div');
+                let lat = document.createElement('div');
+                lat.append(arrayElement.address.geo.lat);
+                geo.appendChild(lat);
+                let lng = document.createElement('div');
+                lng.append(arrayElement.address.geo.lng);
+                geo.appendChild(lng);
+                newAddress.appendChild(geo);
+            } else {
+                let address = document.createElement('div');
+                address.innerText = arrayElement.address[key];
+                newAddress.appendChild(address);
             }
-            div.innerText = arrayElement[arrayKey];
-            minDiv.appendChild(div)
         }
-        document.body.appendChild(minDiv);
+        let phone = document.createElement('div');
+        phone.append(arrayElement.phone);
+        let website = document.createElement('div');
+        website.append(arrayElement.website);
+        let company = document.createElement('div')
+        for (const key in arrayElement.company) {
+            let meCompany = document.createElement('div');
+            meCompany.innerText = arrayElement.company[key];
+            company.appendChild(meCompany);
+        }
+        div.appendChild(id);
+        div.appendChild(name);
+        div.appendChild(username);
+        div.appendChild(email);
+        div.appendChild(newAddress);
+        div.appendChild(phone);
+        div.appendChild(website);
+        div.appendChild(company);
+        document.body.appendChild(div);
     }
 }
+
 userListFunction(usersList);
-
-

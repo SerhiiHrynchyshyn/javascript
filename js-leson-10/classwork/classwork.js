@@ -19,7 +19,7 @@
 // При натисканні кнопки, вся ця інформація зчитується і формується табличка,
 // з відповідним вмістом.
 // (Додатковачастина для завдання)
-// let f1 = document.forms.f1;
+// let f1 = document.forms['f1'];
 // let btn = document.getElementById('btn');
 //
 // let createTable = () => {
