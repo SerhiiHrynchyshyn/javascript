@@ -241,14 +241,14 @@ let userListFunction = (array) => {
     for (const arrayElement of array) {
         let div = document.createElement('div');
         let id = document.createElement('div');
-        id.append(arrayElement.id);
         let name = document.createElement('div');
-        name.append(arrayElement.name);
         let username = document.createElement('div');
-        username.append(arrayElement.username);
         let email = document.createElement('div');
-        email.append(arrayElement.email);
         let newAddress = document.createElement('div');
+        id.append(arrayElement.id);
+        name.append(arrayElement.name);
+        username.append(arrayElement.username);
+        email.append(arrayElement.email);
         for (const key in arrayElement.address) {
             if (typeof arrayElement.address[key] === 'object') {
                 let geo = document.createElement('div');
@@ -266,10 +266,10 @@ let userListFunction = (array) => {
             }
         }
         let phone = document.createElement('div');
-        phone.append(arrayElement.phone);
         let website = document.createElement('div');
-        website.append(arrayElement.website);
         let company = document.createElement('div')
+        phone.append(arrayElement.phone);
+        website.append(arrayElement.website);
         for (const key in arrayElement.company) {
             let meCompany = document.createElement('div');
             meCompany.innerText = arrayElement.company[key];
