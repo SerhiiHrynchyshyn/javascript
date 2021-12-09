@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>favorites</title>
+</head>
+<body>
+
+<script>
+    let arr = localStorage.getItem('arr');
+    let pars = JSON.parse(arr);
+    console.log(pars)
+    for (let parEl of pars) {
+        let divChild = document.createElement('div');
+        for (let key in parEl) {
+            divChild.append(parEl[key])
+        }
+        document.body.append(divChild);
+    }
+</script>
+</body>
+</html>
