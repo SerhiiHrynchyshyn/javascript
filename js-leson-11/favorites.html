@@ -16,10 +16,11 @@
     for (let parEl of pars) {
         let divChild = document.createElement('div');
         for (let key in parEl) {
-            divChild.append(parEl[key])
+            divChild.append(parEl[key] + ' ');
         }
         document.body.append(divChild);
     }
+
 </script>
 </body>
 </html>
