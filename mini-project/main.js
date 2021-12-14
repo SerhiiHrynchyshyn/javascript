@@ -12,6 +12,7 @@
 // 6 Каждому посту добавить кнопку/ссылку, при клике на которую происходит переход на страницу post-details.html,
 // которая имеет детальную информацию про текущий пост.
 
+
 // На странице post-details.html:
 // 7 Вывести всю, без исключения, информацию про объект post на кнопку/ссылку которого был совершен клик ранее.
 // 8 Ниже информации про пост, вывести все комментарии текущего поста (эндпоинт для получения информации
@@ -24,3 +25,33 @@
 // post-details.html - блок с информацией про пост вверху. Комментарии - по 4 в ряд.
 // Все без исключения элементы, который характеризируют user,post,comment  визуализировать, так, что бы было видно
 // их блоки (дать задний фон + margin. Иными словами - крайне четкая сетка)
+
+let body = document.body;
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(users => {
+        for (const user of users) {
+            let container = document.createElement('div');
+            container.classList.add('container');
+
+            let buttonUser = document.createElement('button');
+
+            let linkDetails = document.createElement('a');
+            linkDetails.innerText = 'User Details';
+            linkDetails.href = 'http://localhost:63342/javascript/mini-project/user-details.html?_ijt=4hl73kjlv06fa6no524e7kvesu&_ij_reload=RELOAD_ON_SAVE';
+            linkDetails.target = '_blank'
+
+            for (const key in user) {
+                const divChild = document.createElement('div');
+
+                if (user[key] === user.id || user[key] === user.name) {
+                    divChild.innerText = `${user[key]}`;
+                    container.appendChild(divChild);
+                }
+
+                container.appendChild(buttonUser);
+            }
+            buttonUser.appendChild(linkDetails);
+            body.appendChild(container);
+        }
+    })
