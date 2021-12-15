@@ -30,6 +30,7 @@ let body = document.body;
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
     .then(users => {
+        console.log(users)
         for (const user of users) {
             let container = document.createElement('div');
             container.classList.add('container');
@@ -47,6 +48,9 @@ fetch('https://jsonplaceholder.typicode.com/users')
                 if (user[key] === user.id || user[key] === user.name) {
                     divChild.innerText = `${user[key]}`;
                     container.appendChild(divChild);
+                }
+                buttonUser.onclick = function (){
+                    localStorage.setItem('user', JSON.stringify(user));
                 }
 
                 container.appendChild(buttonUser);
