@@ -31,16 +31,16 @@ fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
     .then(users => {
         console.log(users)
+
         for (const user of users) {
             let container = document.createElement('div');
             container.classList.add('container');
 
             let buttonUser = document.createElement('button');
-
             let linkDetails = document.createElement('a');
             linkDetails.innerText = 'User Details';
             linkDetails.href = 'http://localhost:63342/javascript/mini-project/user-details.html?_ijt=4hl73kjlv06fa6no524e7kvesu&_ij_reload=RELOAD_ON_SAVE';
-            linkDetails.target = '_blank'
+            linkDetails.target = '_blank';
 
             for (const key in user) {
                 const divChild = document.createElement('div');
@@ -52,7 +52,6 @@ fetch('https://jsonplaceholder.typicode.com/users')
                 buttonUser.onclick = function (){
                     localStorage.setItem('user', JSON.stringify(user));
                 }
-
                 container.appendChild(buttonUser);
             }
             buttonUser.appendChild(linkDetails);
