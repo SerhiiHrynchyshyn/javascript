@@ -44,6 +44,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
 
             for (const key in user) {
                 const divChild = document.createElement('div');
+
                 if (user[key] === user.id || user[key] === user.name) {
                     divChild.innerText = `${user[key]}`;
                     container.appendChild(divChild);
