@@ -138,35 +138,57 @@ function goShopping(cash) {
     })
 }
 
-
-
-//
-//
-iWokeUp(true).then(result => {
-    return teeth(result);
-}).then(result => {
-    return cat(result)
-}).then(result => {
-    return coffee(result);
-}).then(result => {
-    return eat(result);
-}).then(result => {
-    return exercise(result);
-}).then(result => {
-    return wentToWork(result);
-}).then(result => {
-    return wentHome(result);
-}).then(result => {
-    return work(result);
-}).then(result => {
-    return goShopping(result);
-})
-
-//
-//
-
-
-//
+// setTimeout(()=> {
+//     console.log('Прокинувся');
+//     setTimeout(() => {
+//         console.log('Почистив зуби');
+//         setTimeout(() => {
+//             console.log('Нагодувати кота');
+//             setTimeout(() => {
+//                 console.log('Зарядка');
+//                 setTimeout(() => {
+//                     console.log('Поїв');
+//                     setTimeout(() => {
+//                         console.log('Кави випив');
+//                         setTimeout(() => {
+//                             console.log('Пішов на роботу');
+//                             setTimeout(() => {
+//                                 console.log('Поїхав додому');
+//                                 setTimeout(() => {
+//                                     console.log('Заробив ГРОШИИ');
+//                                     setTimeout(() => {
+//                                         console.log('йди заробляй');
+//                                     }, 200);
+//                                 }, 300);
+//                             }, 400);
+//                         }, 200);
+//                     }, 400);
+//                 }, 500);
+//             }, 200);
+//         }, 500);
+//     }, 200);
+// }, 300);
+// -----------------------------
+// iWokeUp(true).then(result => {
+//     return teeth(result);
+// }).then(result => {
+//     return cat(result)
+// }).then(result => {
+//     return coffee(result);
+// }).then(result => {
+//     return eat(result);
+// }).then(result => {
+//     return exercise(result);
+// }).then(result => {
+//     return wentToWork(result);
+// }).then(result => {
+//     return wentHome(result);
+// }).then(result => {
+//     return work(result, goShopping);
+// }).then(result => {
+//     return goShopping(result);
+// })
+// -----------------------------
 // async function morning() {
 //     try {
 //         const woke = await iWokeUp(true);
@@ -180,7 +202,7 @@ iWokeUp(true).then(result => {
 //         const job = await work(false, goShopping);
 //
 //     } catch (e) {
-//         console.log(e)
+//         console.error(e);
 //     }
 // }
 //
