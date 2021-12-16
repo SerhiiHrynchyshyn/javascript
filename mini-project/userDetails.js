@@ -5,6 +5,7 @@
 // 6 Каждому посту добавить кнопку/ссылку, при клике на которую происходит переход на страницу post-details.html,
 // которая имеет детальную информацию про текущий пост.
 
+
 let getUser = localStorage.getItem('user');
 let user = JSON.parse(getUser);
 
