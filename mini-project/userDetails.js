@@ -26,10 +26,10 @@ function getUsers(userObj) {
     }
 }
 
-getUsers(user)
+getUsers(user);
 
-container.appendChild(postBtn)
-document.body.appendChild(container)
+container.appendChild(postBtn);
+document.body.appendChild(container);
 
 
 
