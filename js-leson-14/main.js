@@ -316,7 +316,11 @@ iWokeUp(true, (error, callback) => {
                                                                     if (!error) {
                                                                         console.log(callback);
 
-                                                                        goShopping()
+                                                                        goShopping(true, (error, callback) => {
+                                                                            if (!error) {
+                                                                                console.log(callback);
+                                                                            }
+                                                                        });
                                                                     }
                                                                 });
                                                             }
