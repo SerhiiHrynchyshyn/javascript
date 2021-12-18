@@ -183,7 +183,7 @@
 function iWokeUp(e, cb) {
     setTimeout(() => {
         if (e) {
-            cb('Прокинувся');
+            cb(null, 'Прокинувся');
         } else {
             cb('Хватіт спати!');
         }
@@ -194,7 +194,7 @@ function iWokeUp(e, cb) {
 function teeth(e, cb) {
     setTimeout(() => {
         if (e) {
-            cb('Почистив зуби');
+            cb(null, 'Почистив зуби');
         } else {
             cb('не ваняй');
         }
@@ -205,7 +205,7 @@ function teeth(e, cb) {
 function cat(e, cb) {
     setTimeout(() => {
         if (e) {
-            cb('Нагодувати кота');
+            cb(null, 'Нагодувати кота');
         } else {
             cb('Кіт не з\'їв вчорашній корм');
         }
@@ -216,7 +216,7 @@ function cat(e, cb) {
 function exercise(e, cb) {
     setTimeout(() => {
         if (e) {
-            cb('Зарядка');
+            cb(null, 'Зарядка');
         } else {
             cb('Вали робити зарядку');
         }
@@ -226,7 +226,7 @@ function exercise(e, cb) {
 function eat(e, cb) {
     setTimeout(() => {
         if (e) {
-            cb('Поїв');
+            cb(null, 'Поїв');
         } else {
             cb('Лікарня чекає');
         }
@@ -237,7 +237,7 @@ function eat(e, cb) {
 function coffee(e, cb) {
     setTimeout(() => {
         if (e) {
-            cb('Кави випив');
+            cb(null, 'Кави випив');
         } else {
             cb('Не спи');
         }
@@ -247,7 +247,7 @@ function coffee(e, cb) {
 function wentToWork(e, cb) {
     setTimeout(() => {
         if (e) {
-            cb('Пішов на роботу');
+            cb(null, 'Пішов на роботу');
         } else {
             cb('Прийдеш на роботу а сьогодні не твій день');
         }
@@ -256,7 +256,7 @@ function wentToWork(e, cb) {
 
 function wentHome(e, cb) {
     if (e) {
-        cb('Поїхав додому');
+        cb(null, 'Поїхав додому');
     } else {
         cb('Машини нема йди пішки');
     }
@@ -265,7 +265,7 @@ function wentHome(e, cb) {
 
 function work(e, cb) {
     if (e) {
-        cb('Заробив ГРОШИИ');
+        cb(null, 'Заробив ГРОШИИ');
     } else {
         cb('не заробив нічого?');
     }
@@ -273,7 +273,7 @@ function work(e, cb) {
 
 function goShopping(e, cb) {
     if (e) {
-        cb('приніс кучу бабла ');
+        cb(null, 'приніс кучу бабла ');
     } else {
         cb('йди заробляй');
     }
@@ -316,7 +316,7 @@ iWokeUp(true, (error, callback) => {
                                                                     if (!error) {
                                                                         console.log(callback);
 
-                                                                        goShopping
+                                                                        goShopping()
                                                                     }
                                                                 });
                                                             }
