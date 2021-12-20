@@ -75,11 +75,10 @@ fetch('https://jsonplaceholder.typicode.com/posts')
                         divPostTitle.innerText = post.title;
                         container.appendChild(divPostTitle);
 
-
                         let btnPost = document.createElement('button');
                         let btnLinkA = document.createElement('a');
                         btnLinkA.innerText = 'postDetails';
-                        btnLinkA.href = 'http://localhost:63342/javascript/mini-project/postDetails/post-details.html?_ijt=t7h4ombs2jfgj4rklvh0hsij8m&_ij_reload=RELOAD_ON_SAVE';
+                        btnLinkA.href = '/javascript/mini-project/postDetails/post-details.html';
                         btnLinkA.target = '_blank';
                         btnPost.appendChild(btnLinkA);
                         divPostTitle.appendChild(btnPost);
@@ -87,7 +86,6 @@ fetch('https://jsonplaceholder.typicode.com/posts')
                         btnPost.onclick = function (){
                             localStorage.setItem('post', JSON.stringify(post));
                         }
-
                     }
                 }
             }
