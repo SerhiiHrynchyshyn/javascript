@@ -24,15 +24,62 @@
 // post-details.html - блок с информацией про пост вверху. Комментарии - по 4 в ряд.
 // Все без исключения элементы, который характеризируют user,post,comment  визуализировать, так, что бы было видно
 // их блоки (дать задний фон + margin. Иными словами - крайне четкая сетка)
+// let body = document.body;
+//
+// let getPostUser = localStorage.getItem('post');
+// let post = JSON.parse(getPostUser);
+// console.log(post);
+// let container = document.createElement('div');
+//
+// let postBtn = document.createElement('button');
+// postBtn.innerText = 'show comments';
+//
+// function postUser(postObj) {
+//     for (let postKey in postObj) {
+//         let divPost = document.createElement('div');
+//         divPost.innerText = postObj[postKey];
+//         container.appendChild(divPost);
+//     }
+// }
+//
+// postUser(post);
+//
+// body.appendChild(container);
+// container.appendChild(postBtn);
+//
+// fetch('https://jsonplaceholder.typicode.com/comments')
+//     .then(comments => comments.json())
+//     .then(comment => {
+//         postBtn.onclick = function () {
+//             let container = document.createElement('div');
+//             container.classList.add('containerTwo');
+//             for (let commentElement of comment) {
+//
+//                 for (let key in commentElement) {
+//                 let divCom = document.createElement('div');
+//                     if (post.userId === commentElement.postId) {
+//                         divCom.innerText = commentElement[key];
+//                         container.appendChild(divCom);
+//                     }
+//                 }
+//             }
+//             body.appendChild(container);
+//             postBtn.disabled = true;
+//         }
+//     })
+
+
 let body = document.body;
 
 let getPostUser = localStorage.getItem('post');
 let post = JSON.parse(getPostUser);
 console.log(post);
 let container = document.createElement('div');
+container.classList.add('container')
 
 let postBtn = document.createElement('button');
 postBtn.innerText = 'show comments';
+postBtn.classList.add('btn');
 
 function postUser(postObj) {
     for (let postKey in postObj) {
@@ -40,8 +87,6 @@ function postUser(postObj) {
         divPost.innerText = postObj[postKey];
         container.appendChild(divPost);
     }
-
-
 }
 
 postUser(post);
@@ -54,16 +99,18 @@ fetch('https://jsonplaceholder.typicode.com/comments')
     .then(comment => {
         postBtn.onclick = function () {
             let container = document.createElement('div');
-            container.classList.add('container');
+            container.classList.add('containerTwo');
             for (let commentElement of comment) {
+                let wrap = document.createElement('div');
+                wrap.classList.add('wrap');
 
                 for (let key in commentElement) {
-                let divCom = document.createElement('div');
+                    let divCom = document.createElement('div');
                     if (post.userId === commentElement.postId) {
                         divCom.innerText = commentElement[key];
-                        container.appendChild(divCom);
+                        wrap.appendChild(divCom)
+                        container.appendChild(wrap);
                     }
-
 
                 }
             }
