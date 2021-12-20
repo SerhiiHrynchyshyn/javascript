@@ -12,7 +12,6 @@
 // 6 Каждому посту добавить кнопку/ссылку, при клике на которую происходит переход на страницу post-details.html,
 // которая имеет детальную информацию про текущий пост.
 
-
 // На странице post-details.html:
 // 7 Вывести всю, без исключения, информацию про объект post на кнопку/ссылку которого был совершен клик ранее.
 // 8 Ниже информации про пост, вывести все комментарии текущего поста (эндпоинт для получения информации
@@ -26,35 +25,72 @@
 // Все без исключения элементы, который характеризируют user,post,comment  визуализировать, так, что бы было видно
 // их блоки (дать задний фон + margin. Иными словами - крайне четкая сетка)
 
-let body = document.body;
-fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
-    .then(users => {
-        console.log(users)
+let getUser = localStorage.getItem('user');
+let user = JSON.parse(getUser);
 
-        for (const user of users) {
+let container = document.createElement('div');
+container.classList.add('container');
+
+let postBtn = document.createElement('button');
+postBtn.innerText = 'post of current user';
+postBtn.classList.add('btnMain');
+
+let wrap = document.createElement('div');
+wrap.classList.add('wrap');
+
+
+function getUsers(userObj) {
+    for (let userKey in userObj) {
+        let wrapUser = document.createElement('div');
+        if (typeof userObj[userKey] === 'object' && userObj[userKey] !== null) {
+            getUsers(userObj[userKey]);
+        } else {
+            wrapUser.innerText = userObj[userKey];
+            wrap.appendChild(wrapUser)
+            container.appendChild(wrap);
+        }
+    }
+}
+
+getUsers(user)
+
+document.body.appendChild(container)
+container.appendChild(postBtn)
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(post => post.json())
+    .then(posts => {
+        postBtn.onclick = function () {
             let container = document.createElement('div');
-            container.classList.add('container');
+            container.classList.add('containerTwo');
 
-            let buttonUser = document.createElement('button');
-            let linkDetails = document.createElement('a');
-            linkDetails.innerText = 'User Details';
-            linkDetails.href = 'http://localhost:63342/javascript/mini-project/user-details.html?_ijt=4hl73kjlv06fa6no524e7kvesu&_ij_reload=RELOAD_ON_SAVE';
-            linkDetails.target = '_blank';
+            for (let post of posts) {
+                let divPostTitle = document.createElement('div');
 
-            for (const key in user) {
-                const divChild = document.createElement('div');
+                for (let postKey in post) {
 
-                if (user[key] === user.id || user[key] === user.name) {
-                    divChild.innerText = `${user[key]}`;
-                    container.appendChild(divChild);
+                    if (user.id === post.userId) {
+                        divPostTitle.innerText = post.title;
+                        container.appendChild(divPostTitle)
+
+
+                        let btnPost = document.createElement('button');
+                        let btnLinkA = document.createElement('a');
+                        btnLinkA.innerText = 'postDetails';
+                        btnLinkA.href = 'http://localhost:63342/javascript/mini-project/postDetails/post-details.html?_ijt=t7h4ombs2jfgj4rklvh0hsij8m&_ij_reload=RELOAD_ON_SAVE';
+                        btnLinkA.target = '_blank';
+                        btnPost.appendChild(btnLinkA)
+                        divPostTitle.appendChild(btnPost);
+
+                        btnPost.onclick = function (){
+                            localStorage.setItem('post', JSON.stringify(post))
+                            // console.log(post);
+                        }
+
+                    }
                 }
-                buttonUser.onclick = function (){
-                    localStorage.setItem('user', JSON.stringify(user));
-                }
-                container.appendChild(buttonUser);
             }
-            buttonUser.appendChild(linkDetails);
-            body.appendChild(container);
+            document.body.appendChild(container)
         }
     })
+
