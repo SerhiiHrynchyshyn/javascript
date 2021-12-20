@@ -29,8 +29,6 @@ let body = document.body;
 fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
     .then(users => {
-        console.log(users)
-
         for (const user of users) {
             let container = document.createElement('div');
             container.classList.add('container');

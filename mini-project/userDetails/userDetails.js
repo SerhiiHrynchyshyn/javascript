@@ -25,6 +25,8 @@
 // Все без исключения элементы, который характеризируют user,post,comment  визуализировать, так, что бы было видно
 // их блоки (дать задний фон + margin. Иными словами - крайне четкая сетка)
 
+let body = document.body;
+
 let getUser = localStorage.getItem('user');
 let user = JSON.parse(getUser);
 
@@ -46,16 +48,16 @@ function getUsers(userObj) {
             getUsers(userObj[userKey]);
         } else {
             wrapUser.innerText = userObj[userKey];
-            wrap.appendChild(wrapUser)
+            wrap.appendChild(wrapUser);
             container.appendChild(wrap);
         }
     }
 }
 
-getUsers(user)
+getUsers(user);
 
-document.body.appendChild(container)
-container.appendChild(postBtn)
+body.appendChild(container);
+container.appendChild(postBtn);
 
 fetch('https://jsonplaceholder.typicode.com/posts')
     .then(post => post.json())
@@ -71,7 +73,7 @@ fetch('https://jsonplaceholder.typicode.com/posts')
 
                     if (user.id === post.userId) {
                         divPostTitle.innerText = post.title;
-                        container.appendChild(divPostTitle)
+                        container.appendChild(divPostTitle);
 
 
                         let btnPost = document.createElement('button');
@@ -79,18 +81,18 @@ fetch('https://jsonplaceholder.typicode.com/posts')
                         btnLinkA.innerText = 'postDetails';
                         btnLinkA.href = 'http://localhost:63342/javascript/mini-project/postDetails/post-details.html?_ijt=t7h4ombs2jfgj4rklvh0hsij8m&_ij_reload=RELOAD_ON_SAVE';
                         btnLinkA.target = '_blank';
-                        btnPost.appendChild(btnLinkA)
+                        btnPost.appendChild(btnLinkA);
                         divPostTitle.appendChild(btnPost);
 
                         btnPost.onclick = function (){
-                            localStorage.setItem('post', JSON.stringify(post))
-                            // console.log(post);
+                            localStorage.setItem('post', JSON.stringify(post));
                         }
 
                     }
                 }
             }
-            document.body.appendChild(container)
+            body.appendChild(container);
+            postBtn.disabled = true;
         }
     })
 

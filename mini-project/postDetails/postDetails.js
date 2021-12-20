@@ -24,10 +24,11 @@
 // post-details.html - блок с информацией про пост вверху. Комментарии - по 4 в ряд.
 // Все без исключения элементы, который характеризируют user,post,comment  визуализировать, так, что бы было видно
 // их блоки (дать задний фон + margin. Иными словами - крайне четкая сетка)
+let body = document.body;
 
 let getPostUser = localStorage.getItem('post');
 let post = JSON.parse(getPostUser);
-console.log(post)
+console.log(post);
 let container = document.createElement('div');
 
 let postBtn = document.createElement('button');
@@ -37,22 +38,20 @@ function postUser(postObj) {
     for (let postKey in postObj) {
         let divPost = document.createElement('div');
         divPost.innerText = postObj[postKey];
-        container.appendChild(divPost)
+        container.appendChild(divPost);
     }
 
 
 }
 
-postUser(post)
+postUser(post);
 
-document.body.appendChild(container)
-container.appendChild(postBtn)
+body.appendChild(container);
+container.appendChild(postBtn);
 
 fetch('https://jsonplaceholder.typicode.com/comments')
     .then(comments => comments.json())
     .then(comment => {
-        console.log(comment);
-
         postBtn.onclick = function () {
             let container = document.createElement('div');
             container.classList.add('container');
@@ -62,13 +61,13 @@ fetch('https://jsonplaceholder.typicode.com/comments')
                 let divCom = document.createElement('div');
                     if (post.userId === commentElement.postId) {
                         divCom.innerText = commentElement[key];
-                        container.appendChild(divCom)
+                        container.appendChild(divCom);
                     }
 
 
                 }
             }
-            document.body.appendChild(container)
-
+            body.appendChild(container);
+            postBtn.disabled = true;
         }
     })
