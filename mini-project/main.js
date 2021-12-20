@@ -36,7 +36,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
             let buttonUser = document.createElement('button');
             let linkDetails = document.createElement('a');
             linkDetails.innerText = 'User Details';
-            linkDetails.href = '/javascript/mini-project/userDetails/user-details.html';
+            linkDetails.href = 'userDetails/user-details.html';
             linkDetails.target = '_blank';
 
             for (const key in user) {

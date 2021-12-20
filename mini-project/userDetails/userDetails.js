@@ -78,7 +78,7 @@ fetch('https://jsonplaceholder.typicode.com/posts')
                         let btnPost = document.createElement('button');
                         let btnLinkA = document.createElement('a');
                         btnLinkA.innerText = 'postDetails';
-                        btnLinkA.href = '/javascript/mini-project/postDetails/post-details.html';
+                        btnLinkA.href = '../postDetails/post-details.html';
                         btnLinkA.target = '_blank';
                         btnPost.appendChild(btnLinkA);
                         divPostTitle.appendChild(btnPost);
