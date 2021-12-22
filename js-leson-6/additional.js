@@ -1,9 +1,36 @@
-// - Створити функцію-валідатор для адрес електронної пошти. Перевірка повинна включати в себе :данні до знака равлика(@), наявність равлика, крапку яка знаходиться не меньше ніж на 2 символ далі після равлика, функція не чутлива до регістру (some@email.com,SOME@EMAIL.COM,some@EMAIL.com, і тд - однакові значення)
+// - Створити функцію-валідатор для адрес електронної пошти. Перевірка повинна включати в себе :данні до знака равлика(@), наявність равлика,
+// крапку яка знаходиться не меньше ніж на 2 символ далі після равлика, функція не чутлива до регістру (some@email.com,SOME@EMAIL.COM,some@EMAIL.com, і тд - однакові значення)
 // Протестувати на значеннях
 // someemail@gmail.com
 // someeMAIL@gmail.com
 // someeMAIL@i.ua
 // some.email@gmail.com
+
+let email1 = 'someemail@gmail.com';
+let email2 = 'someeMAIL@gmail.com';
+let email3 = 'someeMAIL@i.ua';
+let email4 = 'some.email@gmail.com';
+
+
+function validator(mail) {
+    mail.toLowerCase();
+
+    if (mail.includes('@')) {
+        let arr = mail.split('@');
+        let arr1 = arr[1].split('.');
+
+        if (arr1[0] === '' || arr[0].includes('.') || arr1[0].length <= 2) {
+            console.log('Email is invalid!');
+        } else {
+            console.log(`Email - ${mail} - is valid`);
+        }
+    } else {
+        console.log('Email is invalid!');
+    }
+}
+
+validator(email4);
+
 
 // Примітка
 // Для тих, хто дуже розумний, та почне використовувати регулярні вирази одразу "ні". Своїм мозком подумайте над протоколом, з регулярками будете потім бавитись.
