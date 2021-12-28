@@ -1,0 +1,21 @@
+body{
+    display: flex;
+}
+
+.container {
+    width: 30%;
+    height: auto;
+    background: silver;
+}
+
+.container2 {
+    width: 30%;
+    background: green;
+    display: none;
+}
+
+.container3 {
+    width: 30%;
+    background: pink;
+    display: none;
+}
